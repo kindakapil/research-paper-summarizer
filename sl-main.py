@@ -23,15 +23,6 @@ download_spacy_model("en_core_web_sm")
 
 # Rest of your code (including functions and Streamlit UI) goes here...
 
-# Streamlit UI
-st.title("PDF Text Summarizer")
-st.sidebar.header("Upload PDF")
-uploaded_file = st.sidebar.file_uploader("Upload a PDF file", type=["pdf"])
-
-# Continue with the rest of your Streamlit UI code and functionality
-# ...
-
-
 
 # Function to extract abstract from a PDF file
 def extract_abstract_from_pdf(pdf_path):
