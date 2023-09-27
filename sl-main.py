@@ -7,6 +7,21 @@ from heapq import nlargest
 import tempfile
 import os
 
+
+# Function to download spaCy model if not already installed
+def download_spacy_model(model_name):
+    try:
+        # Check if the model is installed
+        spacy.load(model_name)
+    except OSError:
+        # If not, download and install it
+        st.write(f"Downloading spaCy model: {model_name}")
+        os.system(f"python -m spacy download {model_name}")
+
+# Download the 'en_core_web_sm' model if not already installed
+download_spacy_model("en_core_web_sm")
+
+
 # Function to extract abstract from a PDF file
 def extract_abstract_from_pdf(pdf_path):
     abstract = ""
