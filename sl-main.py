@@ -6,7 +6,7 @@ from string import punctuation
 from heapq import nlargest
 import tempfile
 import os
-
+import subprocess
 
 # Function to download spaCy model if not already installed
 def download_spacy_model(model_name):
@@ -14,12 +14,23 @@ def download_spacy_model(model_name):
         # Check if the model is installed
         spacy.load(model_name)
     except OSError:
-        # If not, download and install it
+        # If not, download and install it using subprocess
         st.write(f"Downloading spaCy model: {model_name}")
-        os.system(f"python -m spacy download {model_name}")
+        subprocess.run(["python", "-m", "spacy", "download", model_name])
 
 # Download the 'en_core_web_sm' model if not already installed
 download_spacy_model("en_core_web_sm")
+
+# Rest of your code (including functions and Streamlit UI) goes here...
+
+# Streamlit UI
+st.title("PDF Text Summarizer")
+st.sidebar.header("Upload PDF")
+uploaded_file = st.sidebar.file_uploader("Upload a PDF file", type=["pdf"])
+
+# Continue with the rest of your Streamlit UI code and functionality
+# ...
+
 
 
 # Function to extract abstract from a PDF file
