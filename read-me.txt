@@ -1,0 +1,3 @@
+1. Open terminal in the the appropriate directory
+2. Command: !pip install streamlit
+3. Command: streamlit run sl-main.py
