@@ -50,7 +50,7 @@ def summarize_text(text):
     return result
 
 # Streamlit UI
-st.title("PDF Text Summarizer")
+st.title("Research Paper Summarizer")
 st.sidebar.header("Upload PDF")
 uploaded_file = st.sidebar.file_uploader("Upload a PDF file", type=["pdf"])
 
